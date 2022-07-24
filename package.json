@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "do": "ts-node-dev src/index.ts"
+  },
   "devDependencies": {
     "@types/node": "^18.0.6",
     "ts-node-dev": "^2.0.0",
