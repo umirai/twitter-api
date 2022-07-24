@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "do": "ts-node-dev src/index.ts"
+    "do": "ts-node-dev src/index.ts",
+    "test": "jest"
   },
   "devDependencies": {
     "@types/jest": "^28.1.6",
