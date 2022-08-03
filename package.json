@@ -1,7 +1,8 @@
 {
   "scripts": {
     "do": "ts-node-dev -r tsconfig-paths/register src/index.ts",
-    "test": "jest"
+    "test": "jest --config jest.config.ts",
+    "test:integration": "jest --config jest.config.integration.ts"
   },
   "devDependencies": {
     "@types/jest": "^28.1.6",
