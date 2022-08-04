@@ -1,7 +1,7 @@
 import { User } from '@/domain/user/user';
 import { GetUsersByKeyWord } from '@/usecase/user/get-users-by-keyword';
 
-describe('usecase/user', () => {
+describe('usecase/user/get-users-by-keyword', () => {
   it('execute()メソッドを実行できる', () => {
 
     // const resp = ["1", "2", "3"].map(id => {
