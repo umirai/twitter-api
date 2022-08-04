@@ -1,4 +1,5 @@
 require('dotenv').config()
-import { main } from './function'
+import { getUsersByKeyword, getUsersByFollows } from '@/function'
 
-main()
+getUsersByKeyword('スプラトゥーン3')
+getUsersByFollows('miramira_dev')
