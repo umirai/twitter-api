@@ -1,16 +1,19 @@
 import { Client } from "twitter-api-sdk"
+import { TwitterClient } from '@/infra/twitter-client/twitter-client'
+import { GetUsersByKeyWord } from '@/usecase/user/get-users-by-keyword'
+import { GetFollowersByUsername } from '@/usecase/user/get-followers-by-username'
 
 const client = new Client(process.env.BEARER_TOKEN as string)
+const twitterClient = new TwitterClient(client)
 
-export const main = async () => {
-  try {
-    const resp = await client.tweets.tweetsRecentSearch({
-      query: 'プラハチャレンジ',
-      max_results: 10,
-      expansions: ['author_id']
-    });
-    console.log(resp);
-  } catch (error) {
-    console.log(error);
-  }
+export const getUsersByKeyword = async (keyword: string) => {
+  const usecase = new GetUsersByKeyWord(twitterClient)
+  const result = await usecase.execute(keyword)
+  console.log(result)
+}
+
+export const getUsersByFollows = async (username: string) => {
+  const usecase = new GetFollowersByUsername(twitterClient)
+  const result = await usecase.execute(username)
+  console.log(result)
 }
