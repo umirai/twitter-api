@@ -6,6 +6,9 @@
 # setup env
 $ cp .env.example .env
 
-# execute script
-$ yarn do
+# キーワードを指定してそのキーワードをツイートしているユーザーを取得
+$ yarn do search-keyword <keyword>
+
+# ユーザーネームを指定してそのユーザーをフォローしているユーザーを取得
+$ yarn do search-followers <username>
 ```
